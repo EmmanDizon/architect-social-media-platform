@@ -1,5 +1,3 @@
-# architect-social-media-platform
-architect scalable social media platform
 # Design a Highly Scalable Image Sharing Social Media Platform
 
 ## Gathering Functional Requirements
@@ -56,6 +54,7 @@ architect scalable social media platform
 
 ## Sequence Flow
 
+```mermaid
 sequenceDiagram
     autonumber
 
@@ -65,9 +64,9 @@ sequenceDiagram
     participant API
     participant AuthService
     participant UserService
-    participant PostService
+  participant PostService
 
-    %% Registration
+  %% Registration
     UserA->>API: Register
     API->>UserService: Create User
     UserService-->>API: User Created
@@ -75,30 +74,31 @@ sequenceDiagram
     AuthService-->>API: JWT Token
     API-->>UserA: Success
 
-    %% Create Post
-    UserA->>API: Upload Image Post
-    API->>PostService: Create Post
-    PostService-->>API: Post Created
+  %% Create Post
+  UserA->>API: Upload Image Post
+  API->>PostService: Create Post
+  PostService-->>API: Post Created
     API-->>UserA: Success
 
-    %% Search User
+  %% Search User
     UserB->>API: Search User
-    API->>UserService: Search Users
-    UserService-->>API: User Profile
+  API->>UserService: Search Users
+  UserService-->>API: User Profile
     API-->>UserB: Results
 
-    %% Follow User
-    UserB->>API: Follow UserA
-    API->>UserService: Follow User
-    UserService-->>API: Follow Created
-    API-->>UserB: Success
+  %% Follow User
+  UserB->>API: Follow UserA
+  API->>UserService: Follow User
+  UserService-->>API: Follow Created
+  API-->>UserB: Success
 
-    %% View Profile
-    UserB->>API: View UserA Profile
-    API->>UserService: Get Profile
-    UserService-->>API: Profile Details
+  %% View Profile
+  UserB->>API: View UserA Profile
+  API->>UserService: Get Profile
+  UserService-->>API: Profile Details
 
-    API->>PostService: Get User Posts
-    PostService-->>API: Posts
+  API->>PostService: Get User Posts
+  PostService-->>API: Posts
 
-    API-->>UserB: Profile + Posts
+  API-->>UserB: Profile + Posts
+```
