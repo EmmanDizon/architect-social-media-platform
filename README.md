@@ -56,7 +56,6 @@ architect scalable social media platform
 
 ## Sequence Flow
 
-```mermaid
 sequenceDiagram
     autonumber
 
@@ -66,10 +65,9 @@ sequenceDiagram
     participant API
     participant AuthService
     participant UserService
-    participant ImageService
-    participant SearchService
-    participant FollowService
+    participant PostService
 
+    %% Registration
     UserA->>API: Register
     API->>UserService: Create User
     UserService-->>API: User Created
@@ -77,18 +75,30 @@ sequenceDiagram
     AuthService-->>API: JWT Token
     API-->>UserA: Success
 
-    UserA->>API: Upload Image
-    API->>ImageService: Save Image
-    ImageService-->>API: Image Stored
+    %% Create Post
+    UserA->>API: Upload Image Post
+    API->>PostService: Create Post
+    PostService-->>API: Post Created
     API-->>UserA: Success
 
+    %% Search User
     UserB->>API: Search User
-    API->>SearchService: Search User A
-    SearchService-->>API: Profile + Images
+    API->>UserService: Search Users
+    UserService-->>API: User Profile
     API-->>UserB: Results
 
-    UserB->>API: Follow User A
-    API->>FollowService: Create Follow Relationship
-    FollowService-->>API: Success
-    API-->>UserB: Confirmation
-```
+    %% Follow User
+    UserB->>API: Follow UserA
+    API->>UserService: Follow User
+    UserService-->>API: Follow Created
+    API-->>UserB: Success
+
+    %% View Profile
+    UserB->>API: View UserA Profile
+    API->>UserService: Get Profile
+    UserService-->>API: Profile Details
+
+    API->>PostService: Get User Posts
+    PostService-->>API: Posts
+
+    API-->>UserB: Profile + Posts
