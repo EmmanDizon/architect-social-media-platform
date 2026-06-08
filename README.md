@@ -102,3 +102,11 @@ sequenceDiagram
 
   API-->>UserB: Profile + Posts
 ```
+
+## System Context
+<img width="662" height="352" alt="system-diagram drawio" src="https://github.com/user-attachments/assets/fbb4dc50-34b4-47bd-bb55-eb79905500c0" />
+
+## Container Diagram
+<img width="1082" height="1142" alt="container drawio (2)" src="https://github.com/user-attachments/assets/7783e5b8-9556-4911-86bd-8de81a7e2f1f" />
+
+
