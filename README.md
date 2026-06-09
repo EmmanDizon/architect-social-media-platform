@@ -107,7 +107,8 @@ sequenceDiagram
 <img width="662" height="352" alt="system-diagram drawio" src="https://github.com/user-attachments/assets/fbb4dc50-34b4-47bd-bb55-eb79905500c0" />
 
 ## Container Diagram
-<img width="1471" height="1292" alt="container drawio" src="https://github.com/user-attachments/assets/8370e90d-4989-44c1-9a64-b9f7ef0544a5" />
+<img width="1222" height="1292" alt="container drawio" src="https://github.com/user-attachments/assets/9f537cae-afb5-4e83-871e-72409af3b257" />
+
 
 
 
