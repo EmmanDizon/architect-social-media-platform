@@ -103,15 +103,14 @@ sequenceDiagram
   API-->>UserB: Profile + Posts
 ```
 
+
 ## System Context
 <img width="662" height="352" alt="system-diagram drawio" src="https://github.com/user-attachments/assets/fbb4dc50-34b4-47bd-bb55-eb79905500c0" />
 
 ## Container Diagram
 <img width="1401" height="1491" alt="container drawio" src="https://github.com/user-attachments/assets/7fedb5b1-d4e8-4824-8b4a-1ce9b476f19a" />
 
-
-
-HLD
+## High Level Design
 <img width="3069" height="2500" alt="Blank diagram" src="https://github.com/user-attachments/assets/0686e014-23ec-4093-b678-1687d95435f9" />
 
 
