@@ -119,10 +119,10 @@ sequenceDiagram
 
 ### Why Containers over Lambda
 
-* **Lower latency** — Lambda cold starts can add extra latency, which may affect the 500ms P99 response time target. Containers remain warm and are better suited for latency-sensitive APIs.
-* **Fewer execution constraints** — Lambda has runtime and resource limits, while containers provide more flexibility for long-running workloads such as feed generation, media processing coordination, and background workers.
-* **Cost efficiency at scale** — At hundreds of millions of requests per day, always-running containers can be more cost-efficient than paying per Lambda invocation.
-* **Sustained traffic** — The platform has constant and predictable high traffic, which is better suited for continuously running services rather than purely event-driven compute.
+* **Lower latency**  Lambda cold starts can add extra latency, which may affect the 500ms P99 response time target. Containers remain warm and are better suited for latency-sensitive APIs.
+* **Fewer execution constraints**  Lambda has runtime and resource limits, while containers provide more flexibility for long-running workloads such as feed generation, media processing coordination, and background workers.
+* **Cost efficiency at scale** At hundreds of millions of requests per day, always-running containers can be more cost-efficient than paying per Lambda invocation.
+* **Sustained traffic**  The platform has constant and predictable high traffic, which is better suited for continuously running services rather than purely event-driven compute.
 
 ### Why EKS
 
