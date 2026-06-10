@@ -126,9 +126,9 @@ sequenceDiagram
 
 ### Why EKS
 
-* **Efficient resource usage** — Kubernetes schedules multiple services on the same node when resources are available, helping maximize CPU and memory utilization while reducing wasted compute.
-* **Independent scaling** — Each service, such as auth, feed, search, and user, can scale independently based on its own traffic pattern using Horizontal Pod Autoscaling and cluster autoscaling.
-* **Self-healing and orchestration** — Kubernetes provides health checks, rolling deployments, automatic pod restarts, service discovery, and workload orchestration out of the box.
+* **Efficient resource usage**  Kubernetes schedules multiple services on the same node when resources are available, helping maximize CPU and memory utilization while reducing wasted compute.
+* **Independent scaling**  Each service, such as auth, feed, search, and user, can scale independently based on its own traffic pattern using Horizontal Pod Autoscaling and cluster autoscaling.
+* **Self-healing and orchestration**  Kubernetes provides health checks, rolling deployments, automatic pod restarts, service discovery, and workload orchestration out of the box.
 
 
 
