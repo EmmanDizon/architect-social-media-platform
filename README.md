@@ -132,9 +132,9 @@ sequenceDiagram
 
 ### Why DynamoDB over SQL
 
-* **Access-pattern driven design** — User profiles, posts, timelines, and follow relationships can be modeled using partition keys and indexes without requiring expensive joins.
-* **Read-heavy performance** — The platform is  read-heavy (feeds, profiles, images). DynamoDB delivers consistent single-digit millisecond latency because requests are routed directly to the target partition using the partition key. Queries do not require joins or scans, so performance remains predictable even as the dataset grows to billions of records.
-* **Connectionless architecture** — Unlike traditional SQL databases, DynamoDB uses HTTP-based requests and does not rely on connection pools, eliminating connection exhaustion concerns under extreme concurrency.
+* **Access-pattern driven design**  User profiles, posts, timelines, and follow relationships can be modeled using partition keys and indexes without requiring expensive joins.
+* **Read-heavy performance**  The platform is  read-heavy (feeds, profiles, images). DynamoDB delivers consistent single-digit millisecond latency because requests are routed directly to the target partition using the partition key. Queries do not require joins or scans, so performance remains predictable even as the dataset grows to billions of records.
+* **Connection database** — Unlike traditional SQL databases, DynamoDB uses http-based requests and does not rely on connection pools, eliminating connection exhaustion concerns under extreme concurrency.
 * **Horizontal scaling** — DynamoDB automatically distributes data across partitions and scales throughput without requiring application-managed sharding.
 * **Reduced operational overhead** — No replica management, failover configuration, vacuuming, or index maintenance. DynamoDB handles these concerns as a managed service.
 
