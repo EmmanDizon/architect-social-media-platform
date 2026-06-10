@@ -111,6 +111,7 @@ sequenceDiagram
 
 
 
-
+HLD
+<img width="3069" height="2500" alt="Blank diagram" src="https://github.com/user-attachments/assets/0686e014-23ec-4093-b678-1687d95435f9" />
 
 
