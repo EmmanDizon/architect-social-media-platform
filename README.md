@@ -138,6 +138,8 @@ sequenceDiagram
 * **Horizontal scaling**  DynamoDB automatically distributes data across partitions and scales throughput without requiring application-managed sharding.
 * **Reduced operational overhead**  No replica management, failover configuration, vacuuming, or index maintenance. DynamoDB handles these concerns as a managed service.
 
+##### SQL indexes remain very fast even with billions of rows. The bigger challenges at massive scale are joins, sorting, aggregations, connection limits, and horizontal sharding. DynamoDB avoids many of those costs by designing data around known access patterns and direct partition-key lookups.
+
 
 
 
