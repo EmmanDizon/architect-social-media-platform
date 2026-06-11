@@ -151,7 +151,7 @@ sequenceDiagram
 
 * **Fast feed access**  Redis is used to cache user timelines and hot feed data so the app can return feeds quickly without querying the database every time.
 * **Reduce database load**  Since feed reads are very frequent, Redis helps reduce repeated reads from DynamoDB.
-* **Low-latency reads** — Redis keeps frequently accessed data in memory, making it suitable for feed and timeline caching.
+* **Low-latency reads**  Redis keeps frequently accessed data in memory, making it suitable for feed and timeline caching.
 
 ### Why OpenSearch
 
