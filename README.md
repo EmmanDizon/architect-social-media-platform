@@ -140,6 +140,24 @@ sequenceDiagram
 
 ##### SQL indexes remain very fast even with billions of rows. The bigger challenges at massive scale are joins, sorting, aggregations, connection limits, and horizontal sharding. DynamoDB avoids many of those costs by designing data around known access patterns and direct partition-key lookups.
 
+### Why Workers and Queues
+
+* **Avoid slowing down the API**  When a user creates a post, the API should save the post and return quickly. Updating feeds, Redis, and OpenSearch can be done in the background.
+* **Handle heavy processing asynchronously**  A single post may need to update many follower timelines and search indexes. This work can be heavy, so it is pushed to a queue and processed by workers.
+* **Improve reliability**  If Redis or OpenSearch is temporarily slow or unavailable, the event stays in the queue and can be retried instead of failing the user request.
+* **Scale background jobs separately**  Workers can be scaled independently from the API when there are many posts or many timeline updates.
+
+### Why Redis
+
+* **Fast feed access**  Redis is used to cache user timelines and hot feed data so the app can return feeds quickly without querying the database every time.
+* **Reduce database load**  Since feed reads are very frequent, Redis helps reduce repeated reads from DynamoDB.
+* **Low-latency reads** — Redis keeps frequently accessed data in memory, making it suitable for feed and timeline caching.
+
+### Why OpenSearch
+
+* **Search is not a simple key lookup**  Searching users or posts by name, keyword, caption, or partial text is not efficient in DynamoDB.
+* **Full-text search support**  OpenSearch is used for fast searching, filtering, and ranking search results.
+* **Separate search workload**  Search traffic is handled by OpenSearch instead of forcing the main database to support search-heavy queries.
 
 
 
