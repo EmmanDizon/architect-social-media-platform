@@ -159,5 +159,12 @@ sequenceDiagram
 * **Full-text search support**  OpenSearch is used for fast searching, filtering, and ranking search results.
 * **Separate search workload**  Search traffic is handled by OpenSearch instead of forcing the main database to support search-heavy queries.
 
+### Why CloudFront Directly Accesses S3
+
+* **Reduced backend load**  Images and static assets are served directly from S3 through CloudFront, avoiding unnecessary requests to backend services.
+* **Improved performance**  CloudFront caches content at edge locations closer to users, reducing latency and improving load times.
+* **Lower infrastructure cost**  Serving static content through CloudFront and S3 is more cost-effective than routing all requests through application servers.
+* **Better scalability**  CloudFront and S3 can handle large volumes of traffic without requiring additional backend resources.
+
 
 
